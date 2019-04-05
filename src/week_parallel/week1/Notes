@@ -3,6 +3,7 @@ JAVA MEMORY MODEL RULES :-
 1) Two threads writing to separate locations in memory do not need synchronization
 2) A thread X that calls join on another thread Y is guaranteed to observe all the writes by thread Y after join returns.
     We saw this in AccRunner our main thread calls join on threads s,t so, it will observe all the changes by them
+    All the writes to memory performed by the thread being joined occur before the join call returns and are visible to threads that call the join method.
 
 Eventually it all boils down to 2 constructs,
 1) threads
