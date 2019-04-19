@@ -1,0 +1,26 @@
+LOCK-FREEDOM
+
+In a lock-free operation, a slow thread
+cannot block the execution of other threads. If multiple threads execute an operation
+concurrently, then at least one of these threads must complete in a finite amount of time.
+
+It is not easy to prove that an operation is lock-free,
+
+The CAS-based getUniqueId implementation is indeed lock-free.
+Threads only loop if the CAS fails, and the
+CAS can only fail if some thread successfully computed the unique identifier: this means
+that some other thread executed getUniqueId method successfully in a finite number of
+steps between the get and compareAndSet method calls. This fact proves lock-freedom.
+
+Issues with intrinsic locking:-
+In a lock-free operation, a slow thread
+cannot block the execution of other threads. If multiple threads execute an operation
+concurrently, then at least one of these threads must complete in a finite amount of time.
+
+It is not easy to prove that an operation is lock-free,
+
+The CAS-based getUniqueId implementation is indeed lock-free.
+Threads only loop if the CAS fails, and the
+CAS can only fail if some thread successfully computed the unique identifier: this means
+that some other thread executed getUniqueId method successfully in a finite number of
+steps between the get and compareAndSet method calls. This fact proves lock-freedom.
